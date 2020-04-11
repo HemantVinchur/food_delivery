@@ -3,7 +3,7 @@ function do_login(id, restaurant_id, ele){
 
   ajax_req(
     'POST',
-    'methods/users/edit_menu.php?id='+id+'restaurant_id='+restaurant_id,
+    'methods/users/edit_menu.php?'+'id='+id+'&restaurant_id='+restaurant_id,
     form,
     function(e) {
       console.log(e.responseText);

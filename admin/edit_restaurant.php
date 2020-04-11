@@ -14,7 +14,7 @@
        ?>
     </div>
   <?php include('inc/scripts.php'); ?>
-  <script type="text/javascript" src="controllers/edit_restaurant.js?id=<?php echo $_GET['id'] ?>"></script>
+  <script type="text/javascript" src="controllers/edit_restaurant.js?restaurant_id=<?php echo $_GET['restaurant_id'] ?>"></script>
 </body>
 
 </html>

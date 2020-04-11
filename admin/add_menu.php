@@ -13,6 +13,7 @@
        ?>
     </div>
   <?php include('inc/scripts.php'); ?>
+  <script type="text/javascript" src="controllers/delete_menu.js?id=<?php echo $_GET['id'] ?>"></script>
   <script type="text/javascript" src="controllers/add_menu.js"></script>
 </body>
 

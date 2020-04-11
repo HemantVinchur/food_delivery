@@ -1,8 +1,8 @@
-function do_login(ele){
+function do_login(category_id, ele){
   var form=form_inputs('login_form');
   ajax_req(
     'POST',
-    'methods/users/add_restaurant.php',
+    'methods/users/add_restaurant.php?category_id='+category_id,
     form,
     function(e) {
       console.log(e.responseText);

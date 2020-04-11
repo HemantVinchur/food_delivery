@@ -29,16 +29,6 @@
         <div class="drop_menu">
           <ul class="list">
             <li>
-              <a href="add_restaurant.php">
-                <span class="text">Add restaurants</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="drop_menu">
-          <ul class="list">
-            <li>
               <a href="list_of_restaurants.php">
                 <span class="text">List of restaurants</span>
               </a>
@@ -56,8 +46,8 @@
         <div class="drop_menu">
           <ul class="list">
             <li>
-              <a href="list_of_menus.php">
-                <span class="text">Menus</span>
+              <a href="add_category.php">
+                <span class="text">Add category</span>
               </a>
             </li>
           </ul>
@@ -66,8 +56,8 @@
         <div class="drop_menu">
           <ul class="list">
             <li>
-              <a href="list_of_items.php">
-                <span class="text">Items</span>
+              <a href="list_of_categories.php">
+                <span class="text">List of categories</span>
               </a>
             </li>
           </ul>

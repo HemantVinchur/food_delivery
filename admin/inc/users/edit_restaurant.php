@@ -33,7 +33,7 @@
                 </div>
                 <br>
                 <div class="input_group">
-                  <button onclick="do_login(<?php echo $_GET['id'] ?>, this)" class="button" type="button" name="button">submit</button>
+                  <button onclick="do_login(<?php echo $_GET['restaurant_id'] ?>, this)" class="button" type="button" name="button">submit</button>
                 </div>
               </div>
             </div>

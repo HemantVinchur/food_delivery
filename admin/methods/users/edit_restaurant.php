@@ -7,8 +7,8 @@
   $name=$_POST['name'];
   $email=$_POST['email'];
   $contact=$_POST['contact'];
-  $id=$_GET['id'];
+  $restaurant_id=$_GET['restaurant_id'];
 
-  $user_id=restaurant_profile($id,$name,$email,$contact);
+  $user_id=restaurant_profile($restaurant_id,$name,$email,$contact);
   print_r($user_id);
 ?>

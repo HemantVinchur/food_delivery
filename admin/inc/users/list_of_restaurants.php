@@ -12,8 +12,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
+      <th scope="col">Serial no.</th>
       <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">City</th>
       <th scope="col">Email</th>
       <th scope="col">Contact</th>
       <th scope="col">Action</th>
@@ -21,19 +23,22 @@
   </thead>
   <tbody>
     <?php
-        $sql="SELECT * from restaurants";
+    $i=1;
+        $sql="SELECT * from restaurants LEFT JOIN categories on restaurants.category_id=categories.category_id";
 
         $result=mysqli_query($link,$sql);
         while ($row=mysqli_fetch_assoc($result)) {
       ?>
       <tr>
-        <th scope="row"><?php echo $row['id']?></th>
-        <td><?php echo $row['name']?></td>
+        <th scope="row"><?php echo $i ?></th>
+        <td><?php echo $row['restaurant_name']?></td>
+        <td><?php echo $row['category_name']?></td>
+        <td><?php echo $row['city']?></td>
         <td><?php echo $row['email']?></td>
         <td><?php echo $row['number']?></td>
-        <td><a href="edit_restaurant.php?id=<?php echo $row['id']; ?>">Edit</a> / <a href="delete_restaurant.php?id=<?php echo $row['id']; ?>">Delete</a> / <a href="add_menu.php?id=<?php echo $row['id']; ?>">Add menu</a></td>
+        <td><a href="edit_restaurant.php?restaurant_id=<?php echo $row['restaurant_id']; ?>">Edit</a> / <a href="delete_restaurant.php?restaurant_id=<?php echo $row['restaurant_id']; ?>">Delete</a> / <a href="add_menu.php?restaurant_id=<?php echo $row['restaurant_id']; ?>">Add menu</a></td>
       </tr>
-    <?php } ?>
+    <?php $i++; } ?>
   </tbody>
 </table>
 </div>

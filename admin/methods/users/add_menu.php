@@ -6,8 +6,8 @@
   $tosend=[];
 
   $name=$_POST['name'];
-  $id=$_GET['id'];
-  $user_id=add_menu($id, $name);
+  $restaurant_id=$_GET['restaurant_id'];
+  $user_id=add_menu($restaurant_id, $name);
 
   print_r($user_id);
 
