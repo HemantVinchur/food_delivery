@@ -73,7 +73,7 @@
                 <th scope="row"><?php echo $row['item_id']?></th>
                 <td><?php echo $row['item_name']?></td>
                 <td><?php echo $restaurant['menu_name']?></td>
-                  <td><a href="edit_item.php?item_id=<?php echo $row['item_id']; ?>&menu_id=<?php echo $restaurant['menu_id']; ?>">Edit</a> / <a href="delete_item.php?item_id=<?php echo $row['item_id']; ?>&menu_id=<?php echo $restaurant['menu_id']; ?>">Delete</a></td>
+                  <td><a href="edit_item.php?item_id=<?php echo $row['item_id']; ?>&menu_id=<?php echo $restaurant['menu_id']; ?>">Edit</a> /<a href="add_pricing.php?item_id=<?php echo $row['item_id']; ?>&restaurant_id=<?php echo $restaurant['restaurant_id']; ?>">Add pricing</a>/ <a href="delete_item.php?item_id=<?php echo $row['item_id']; ?>&menu_id=<?php echo $restaurant['menu_id']; ?>">Delete</a></td>
               </tr>
             <?php } ?>
           </tbody>

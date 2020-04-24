@@ -8,8 +8,7 @@
   $username=$_POST['username'];
   $password=$_POST['password'];
 
-  $user_id=login($username,$password,'token');
+  $user_id=login($username,$password);
 
-  print_r($user_id);
-
+  print_r(json_encode($user_id));
 ?>

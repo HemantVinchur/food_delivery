@@ -4,15 +4,16 @@
 
 <body>
 
-    <?php
-      include('inc/sidebar.php');
-    ?>
     <div class="body_contents">
       <?php
       include('inc/users/list_of_users.php');
 
        ?>
     </div>
+
+        <?php
+          include('inc/sidebar.php');
+        ?>
   <?php include('inc/scripts.php'); ?>
 </body>
 

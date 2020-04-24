@@ -1,3 +1,6 @@
+<?php
+  include_once('core/config.php');
+?>
 <div id="banner">
   <div class="container-fluid">
     <div class="row">
@@ -81,10 +84,65 @@
                   </div>
                 </div>
                 <br>
-
                 <div class="row">
                   <div id="banner_carousel" class="owl-carousel owl-theme">
+                    <?php
+                    $i=1;
+                        $sql="SELECT * from restaurants LEFT JOIN categories on restaurants.category_id=categories.category_id";
+
+                        $result=mysqli_query($link,$sql);
+                        while ($row=mysqli_fetch_assoc($result)) {
+                      ?>
                     <div class="item">
+                      <div class="wrapper">
+                        <div class="resto_sec">
+                          <div class="text">
+                            <h3><?php echo $row['restaurant_name']?><span><?php echo $row['category_name']?></span></h3>
+                          </div>
+                          <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                          </ul>
+                          <div class="resto_name">
+                            <h3>light breakfast</h3>
+                            <p><?php echo $row['description']?></p>
+                            <div class="text_wrapper">
+                              <h2>$8</h2>
+                              <h4>order</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <?php $i++; } ?>
+                     <!-- <div class="item">
+                      <div class="wrapper">
+                        <div class="resto_sec">
+                          <div class="text">
+                            <h3></span></h3>
+                          </div>
+                          <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                          </ul>
+                          <div class="resto_name">
+                            <h3>summer brake</h3>
+                            <p></p>
+                            <div class="text_wrapper">
+                              <h2>$8</h2>
+                              <h4>order</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
+                    <!-- <div class="item">
                       <div class="wrapper">
                         <div class="resto_sec">
                           <div class="text">
@@ -107,8 +165,8 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="item">
+                    </div> -->
+                    <!-- <div class="item">
                       <div class="wrapper">
                         <div class="resto_sec">
                           <div class="text">
@@ -179,57 +237,10 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="item">
-                      <div class="wrapper">
-                        <div class="resto_sec">
-                          <div class="text">
-                            <h3>monet_restaurant <span>1.4km away</span></h3>
-                          </div>
-                          <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                          </ul>
-                          <div class="resto_name">
-                            <h3>light breakfast</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                            <div class="text_wrapper">
-                              <h2>$8</h2>
-                              <h4>order</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <div class="wrapper">
-                        <div class="resto_sec">
-                          <div class="text">
-                            <h3>monet_restaurant <span>1.4km away</span></h3>
-                          </div>
-                          <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                          </ul>
-                          <div class="resto_name">
-                            <h3>summer brake</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-                            <div class="text_wrapper">
-                              <h2>$8</h2>
-                              <h4>order</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div> <!--banner carousel-->
+
               </div>
             </div>
           </div>

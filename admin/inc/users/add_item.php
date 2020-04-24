@@ -3,8 +3,6 @@
   <div class="container">
     		<div class='jumbotron'>
     <div class="row">
-      <!-- <div class="col-sm-3">
-      </div> -->
       <div class="col-sm-3">
         <div id="login">
           <div class="card layer1">

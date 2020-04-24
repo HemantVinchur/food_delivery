@@ -1,0 +1,13 @@
+
+Game history.   (done)
+
+Redirect to confirmation page.
+
+Show value on update profile.  (done)
+
+Settings page-:   (done)
+               Change password
+               Time period (release tickets)(release_pr) : 30
+               Rate for single match(rate_single) : 4
+               Rate for double match() : 44
+               

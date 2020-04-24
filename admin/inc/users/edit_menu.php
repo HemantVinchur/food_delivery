@@ -19,14 +19,22 @@
                   </div>
                 </div>
                 <br>
+                <?php
+                $menu_id=$_GET['menu_id'];
+                    $sql="SELECT * from menus where menu_id=$menu_id";
+
+                    $result=mysqli_query($link,$sql);
+                    while ($row=mysqli_fetch_assoc($result)) {
+                  ?>
                 <div class="input_group">
-                  <input id="name" class="input" type="text" name="name" value="" required="">
+                  <input id="name" class="input" type="text" name="name" value="<?php echo $row['menu_name']?>" required="">
                   <label for="">Name</label>
                   <span class="highlight"></span>
                 </div>
                 <br>
+                <?php } ?>
                 <div class="input_group">
-                  <button onclick="do_login(<?php echo $_GET['id'] ?>,<?php echo $_GET['restaurant_id'] ?>, this)" class="button" type="button" name="button">submit</button>
+                  <button onclick="do_login(<?php echo $menu_id ?>,<?php echo $_GET['restaurant_id'] ?>, this)" class="button" type="button" name="button">submit</button>
                 </div>
               </div>
             </div>
@@ -37,10 +45,7 @@
       <div class="col-sm-1">
       </div>
       <div class="col-sm-7">
-        <br><br>
-        <?php
-          include_once('../core/config.php');
-        ?>
+
         <div class='container'>
         		<div class='jumbotron'>
         <div class="heading">
@@ -59,23 +64,20 @@
           </thead>
           <tbody>
             <?php
-            $restaurant_id=$_GET["restaurant_id"];
-                $sql="SELECT * from menus where restaurant_id='$restaurant_id'";
+            // $restaurant_id=$_GET['restaurant_id'];
+                $restaurant_sql="SELECT * from menus inner join restaurants on menus.restaurant_id=restaurants.restaurant_id where menu_id='$menu_id'";
 
-                $result=mysqli_query($link,$sql);
-                while ($row=mysqli_fetch_assoc($result)) {
-                  // $restaurant_id=$row['restaurant_id'];
-                  $sql="SELECT * from restaurants where id='$restaurant_id'";
-                  $restaurant_result=mysqli_query($link,$sql);
-                  $restaurant=mysqli_fetch_assoc($restaurant_result);
+                $restaurant_result=mysqli_query($link,$restaurant_sql);
+                while ($restaurant_row=mysqli_fetch_assoc($restaurant_result)) {
+                  $i=1;
               ?>
               <tr>
-                <th scope="row"><?php echo $row['id']?></th>
-                <td><?php echo $row['name']?></td>
-                <td><?php echo $restaurant['name']?></td>
-                  <td><a href="edit_menu.php?id=<?php echo $row['id']; ?> & restaurant_id=<?php echo $row['restaurant_id']; ?>">Edit</a> / <a href="delete_menu.php?id=<?php echo $row['id']; ?> & restaurant_id=<?php echo $row['restaurant_id']; ?>">Delete</a></td>
+                <th scope="row"><?php echo $i ?></th>
+                <td><?php echo $restaurant_row['menu_name']?></td>
+                <td><?php echo $restaurant_row['restaurant_name']?></td>
+                  <td><a href="edit_menu.php?menu_id=<?php echo $restaurant_row['menu_id']; ?> & restaurant_id=<?php echo $restaurant_row['restaurant_id']; ?>">Edit</a> / <a href="delete_menu.php?id=<?php echo $restaurant_row['menu_id']; ?> & restaurant_id=<?php echo $restaurant_row['restaurant_id']; ?>">Delete</a></td>
               </tr>
-            <?php } ?>
+            <?php $i++;} ?>
           </tbody>
         </table>
         </div>

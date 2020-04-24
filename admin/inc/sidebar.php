@@ -90,6 +90,23 @@
           </ul>
         </div>
       </div>
+      <hr>
+      <div class="item drpdwn">
+        <span class="status_ico"></span>
+        <span class="title toggle_drpdwn" data-dropdwn="">
+          <span class="icon sales"></span>
+          Orders
+        </span>
+        <div class="drop_menu">
+          <ul class="list">
+            <li>
+              <a href="list_of_orders.php">
+                <span class="text">List of orders</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+<hr>
       <div class="item">
         <span class="title">
           <span class="icon logout"></span>

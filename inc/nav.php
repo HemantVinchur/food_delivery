@@ -13,7 +13,7 @@
           <ul class="top_nav">
             <li class="active"><a href="index.php">home</a></li>
             <li><a href="services.php">today's deals</a></li>
-            <li><a href="portfolio.php">restaurants</a></li>
+            <li><a href="list_of_restaurants.php">restaurants</a></li>
           </ul>
         </div>
       </div>

@@ -6,7 +6,7 @@
   $tosend=[];
   $name=$_POST['name'];
   // $restaurant_name=$_POST['restaurant'];
-  $id=$_GET['id'];
+  $id=$_GET['menu_id'];
   $restaurant_id=$_GET['restaurant_id'];
 
   $user_id=edit_menu($id,$name,$restaurant_id);

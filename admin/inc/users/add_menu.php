@@ -67,7 +67,7 @@
           <th scope="row"><?php echo $row['menu_id']?></th>
           <td><?php echo $row['menu_name']?></td>
           <td><?php echo $row['restaurant_name']?></td>
-            <td><a href="edit_menu.php?menu_id=<?php echo $row['menu_id']; ?> & restaurant_id=<?php echo $row['restaurant_id']; ?>">Edit</a>  /  <a href="add_item.php?restaurant_id=<?php echo $row['restaurant_id']; ?> & menu_id=<?php echo $row['menu_id']; ?>">Add item</a></td>
+            <td><a href="edit_menu.php?menu_id=<?php echo $row['menu_id']; ?>&restaurant_id=<?php echo $row['restaurant_id']; ?>">Edit</a>  /  <a href="add_item.php?restaurant_id=<?php echo $row['restaurant_id']; ?> & menu_id=<?php echo $row['menu_id']; ?>">Add item</a></td>
         </tr>
       <?php } ?>
     </tbody>

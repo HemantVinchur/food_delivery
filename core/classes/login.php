@@ -8,7 +8,7 @@
     // send otp
     // validate otp
 
-  function check_login($type,$token){
+  function check_login($token){
     global $link;
 
     $sql="SELECT user_id FROM users_token where token='$token'";
@@ -102,7 +102,7 @@
   // user tokens end
 
   //logging in
-  function login($username,$password,$type){
+  function login($username,$password){
     global $link;
     $tosend=[];
 
@@ -115,20 +115,10 @@
 
             if (password_verify($password, $row['password'])){
 
-              if ($type=='token') {
-                $token=create_user_token($row['id']);
-                $tosend=['msg'=>'logged_in','token'=>$token];
-              }elseif ($type=='session') {
-                //creating session
-                if (!isset($_SESSION)) {
-                  session_start();
-                }else {
-                  session_destroy();
-                  session_start();
-                }
-                $_SESSION['user_id']=$row['id'];
-                $tosend=['msg'=>'logged_in'];
-              }
+
+              $token=create_user_token($row['id']);
+              $tosend=['msg'=>'logged_in','token'=>$token];
+
             }
             else{
               $tosend=['msg'=>'pnm'];

@@ -45,6 +45,13 @@
         }
 
 
+                function add_pricing($price,$type, $item_id,$restaurant_id){
+                  global $link;
+                echo $sql="INSERT INTO pricing (item_id,type,restaurant_id,price) VALUES ('$item_id','$type','$restaurant_id','$price')";
+                  // mysqli_query($link,$sql);
+                 return mysqli_query($link,$sql);
+                }
+
                 function add_item($menu_id,$restaurant_id, $name){
                   global $link;
                 echo $sql="INSERT INTO items (item_name,restaurant_id,menu_id) VALUES ('$name','$restaurant_id','$menu_id')";
